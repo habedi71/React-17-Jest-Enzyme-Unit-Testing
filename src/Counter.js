@@ -6,14 +6,14 @@ export default function Counter() {
 		<>
 			<h1>This is counter app</h1>
 			<div id="counter-value">{counter}</div>
-			<button id="increament-btn" onClick={() => setCouner(counter + 1)}>
-				Increament
+			<button id="increment-btn" onClick={() => setCouner(counter + 1)}>
+				Increment
 			</button>
 			<button
-				id="decreament-btn"
+				id="decrement-btn"
 				onClick={() => setCouner(!counter ? counter : counter - 1)}
 			>
-				Decreament
+				Decrement
 			</button>
 		</>
 	);

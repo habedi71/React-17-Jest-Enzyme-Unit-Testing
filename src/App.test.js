@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 // import Counter from "./Counter";
 // import { shallow } from "enzyme"; //with shallow test is not done for child components
 
-describe("App is running", () => {
+describe("<App /> and Child Components", () => {
 	let wrapper;
 	beforeEach(() => {
 		wrapper = mount(<App />);
@@ -12,29 +12,29 @@ describe("App is running", () => {
 		// wrapper = shallow(<Counter />);
 	});
 
-	test("renders header", () => {
+	test("render header", () => {
 		expect(wrapper.find("h1").text()).toContain("This is counter app");
 	});
 
-	test("render button with text of `Increament`", () => {
-		expect(wrapper.find("#increament-btn").text()).toBe("Increament");
+	test("render button with text of `Increment`", () => {
+		expect(wrapper.find("#increment-btn").text()).toBe("Increment");
 	});
 
-	test("render button with text of `Decreament`", () => {
-		expect(wrapper.find("#decreament-btn").text()).toBe("Decreament");
+	test("render button with text of `Decrement`", () => {
+		expect(wrapper.find("#decrement-btn").text()).toBe("Decrement");
 	});
 
 	test("render initial state in div", () => {
 		expect(wrapper.find("#counter-value").text()).toBe("0");
 	});
 
-	test("render increamnet btn event and increament value", () => {
-		wrapper.find("#increament-btn").simulate("click");
+	test("render incremnet btn event and increment value", () => {
+		wrapper.find("#increment-btn").simulate("click");
 		expect(wrapper.find("#counter-value").text()).toBe("1");
 	});
 
-	test("render decreament btn event and not less than 0", () => {
-		wrapper.find("#decreament-btn").simulate("click");
+	test("render decrement btn event and value not less than 0", () => {
+		wrapper.find("#decrement-btn").simulate("click");
 		const counterValue = wrapper.find("#counter-value").text();
 		expect(Number(counterValue) <= 0).toBeTruthy();
 	});
